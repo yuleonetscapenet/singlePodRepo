@@ -18,5 +18,7 @@ Pod::Spec.new do |s|
     veritix.vendored_frameworks = "Pods/Veritix/AXSSDKMobile.framework"
   end
 
-
+s.subspec 'Veritix' do |simility|
+    simility.vendored_frameworks = "Pods/Simility/AXSSDKMobile.framework"
+  end
 end
