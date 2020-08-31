@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.platform         = :ios, '12.0'
   
   s.subspec 'Veritix' do |simility|
-    simility.vendored_frameworks = "Pods/Simility/AXSSDKMobile.framework"
+    simility.vendored_frameworks = "LeoYuVendorPods/Simility/AXSSDKMobile.framework"
   end
 
 end
