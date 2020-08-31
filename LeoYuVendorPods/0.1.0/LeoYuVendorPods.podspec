@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
 }
   s.homepage         = 'https://www.github.com'
   s.author           = '3rd Parties'
-  s.source           = { :git => "https://github.com/yuleonetscapenet/TestVendorsHack.git",
+  s.source           = { :git => "https://github.com/yuleonetscapenet/singlePodRepo.git",
                         :tag => "#{s.version}"
 }
   s.platform         = :ios, '12.0'
