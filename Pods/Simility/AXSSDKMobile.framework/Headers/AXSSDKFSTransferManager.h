@@ -10,9 +10,6 @@
 
 @class AXSSDKFSTicketShareRecipient;
 
-/**
- *  The manager that handlers FlashSeats ticket transfer APIs.
- */
 @interface AXSSDKFSTransferManager : NSObject
 
 /**
@@ -20,7 +17,7 @@
  *
  *  @return class object
  */
-+ (AXSSDKFSTransferManager *)sharedInstance;
++ (nonnull AXSSDKFSTransferManager *)sharedInstance;
 
 /**
  *  Transfer tickets to a recipient
@@ -29,7 +26,7 @@
  *  @param recipient         Recipient object
  *  @param completionHandler A completion handler after API request is completed
  */
-- (void)transferTickets:(NSArray<NSString *> *)ticketIds recipient:(AXSSDKFSTicketShareRecipient *)recipient completionHandler:(void(^)(NSError *error))completionHandler;
+- (void)transferTickets:(nonnull NSArray<NSString *> *)ticketIds recipient:(nonnull AXSSDKFSTicketShareRecipient *)recipient completionHandler:(void(^ _Nullable)(NSError * _Nullable error))completionHandler DEPRECATED_ATTRIBUTE;
 
 /**
  *  Recall a transferred action. The action can include a group of tickets.
@@ -37,6 +34,6 @@
  *  @param transferActionId  Transfer action ID
  *  @param completionHandler A completion handler after API request is completed
  */
-- (void)recallTransferTicket:(NSString *)transferActionId completionHandler:(void(^)(NSError *error))completionHandler;
+- (void)recallTransferTicket:(nonnull NSString *)transferActionId completionHandler:(void(^ _Nullable)(NSError * _Nullable error))completionHandler DEPRECATED_ATTRIBUTE;
 
 @end

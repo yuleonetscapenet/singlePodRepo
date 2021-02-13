@@ -47,44 +47,44 @@
 + (nonnull instancetype)globalCache;
 
 // Opitionally create a different EGOCache instance with it's own cache directory
-- (nonnull instancetype)initWithCacheDirectory:(NSString* __nonnull)cacheDirectory;
+- (nonnull instancetype)initWithCacheDirectory:(nonnull NSString*)cacheDirectory;
 
 - (void)clearCache;
-- (void)removeCacheForKey:(NSString* __nonnull)key;
+- (void)removeCacheForKey:(nonnull NSString *)key;
 
-- (BOOL)hasCacheForKey:(NSString* __nonnull)key;
+- (BOOL)hasCacheForKey:(nonnull NSString*)key;
 
-- (NSData* __nullable)dataForKey:(NSString* __nonnull)key;
-- (void)setData:(NSData* __nonnull)data forKey:(NSString* __nonnull)key;
-- (void)setData:(NSData* __nonnull)data forKey:(NSString* __nonnull)key withTimeoutInterval:(NSTimeInterval)timeoutInterval;
+- (nullable NSData*)dataForKey:(nonnull NSString*)key;
+- (void)setData:(nonnull NSData*)data forKey:(nonnull NSString*)key;
+- (void)setData:(nonnull NSData*)data forKey:(nonnull NSString*)key withTimeoutInterval:(NSTimeInterval)timeoutInterval;
 
-- (NSString* __nullable)stringForKey:(NSString* __nonnull)key;
-- (void)setString:(NSString* __nonnull)aString forKey:(NSString* __nonnull)key;
-- (void)setString:(NSString* __nonnull)aString forKey:(NSString* __nonnull)key withTimeoutInterval:(NSTimeInterval)timeoutInterval;
+- (nullable NSString*)stringForKey:(nonnull NSString*)key;
+- (void)setString:(nonnull NSString*)aString forKey:(nonnull NSString*)key;
+- (void)setString:(nonnull NSString*)aString forKey:(nonnull NSString*)key withTimeoutInterval:(NSTimeInterval)timeoutInterval;
 
-- (NSDate* __nullable)dateForKey:(NSString* __nonnull)key;
-- (NSArray* __nonnull)allKeys;
+- (nullable NSDate*)dateForKey:(nonnull NSString*)key;
+- (nonnull NSArray*)allKeys;
 
 #if TARGET_OS_IPHONE
-- (UIImage* __nullable)imageForKey:(NSString* __nonnull)key;
-- (void)setImage:(UIImage* __nonnull)anImage forKey:(NSString* __nonnull)key;
-- (void)setImage:(UIImage* __nonnull)anImage forKey:(NSString* __nonnull)key withTimeoutInterval:(NSTimeInterval)timeoutInterval;
+- (nullable UIImage*)imageForKey:(nonnull NSString*)key;
+- (void)setImage:(nonnull UIImage*)anImage forKey:(nonnull NSString*)key;
+- (void)setImage:(nonnull UIImage*)anImage forKey:(nonnull NSString*)key withTimeoutInterval:(NSTimeInterval)timeoutInterval;
 #else
-- (NSImage* __nullable)imageForKey:(NSString* __nonnull)key;
-- (void)setImage:(NSImage* __nonnull)anImage forKey:(NSString* __nonnull)key;
-- (void)setImage:(NSImage* __nonnull)anImage forKey:(NSString* __nonnull)key withTimeoutInterval:(NSTimeInterval)timeoutInterval;
+- (nullable NSImage*)imageForKey:(nonnull NSString*)key;
+- (void)setImage:(nonnull NSImage*)anImage forKey:(nonnull NSString*)key;
+- (void)setImage:(nonnull NSImage*)anImage forKey:(nonnull NSString*)key withTimeoutInterval:(NSTimeInterval)timeoutInterval;
 #endif
 
-- (NSData* __nullable)plistForKey:(NSString* __nonnull)key;
-- (void)setPlist:(nonnull id)plistObject forKey:(NSString* __nonnull)key;
-- (void)setPlist:(nonnull id)plistObject forKey:(NSString* __nonnull)key withTimeoutInterval:(NSTimeInterval)timeoutInterval;
+- (nullable NSData*)plistForKey:(nonnull NSString*)key;
+- (void)setPlist:(nonnull id)plistObject forKey:(nonnull NSString*)key;
+- (void)setPlist:(nonnull id)plistObject forKey:(nonnull NSString*)key withTimeoutInterval:(NSTimeInterval)timeoutInterval;
 
-- (void)copyFilePath:(NSString* __nonnull)filePath asKey:(NSString* __nonnull)key;
-- (void)copyFilePath:(NSString* __nonnull)filePath asKey:(NSString* __nonnull)key withTimeoutInterval:(NSTimeInterval)timeoutInterval;
+- (void)copyFilePath:(nonnull NSString*)filePath asKey:(nonnull NSString*)key;
+- (void)copyFilePath:(nonnull NSString*)filePath asKey:(nonnull NSString*)key withTimeoutInterval:(NSTimeInterval)timeoutInterval;
 
-- (nullable id<NSCoding>)objectForKey:(NSString* __nonnull)key;
-- (void)setObject:(nonnull id<NSCoding>)anObject forKey:(NSString* __nonnull)key;
-- (void)setObject:(nonnull id<NSCoding>)anObject forKey:(NSString* __nonnull)key withTimeoutInterval:(NSTimeInterval)timeoutInterval;
+- (nullable id<NSCoding>)objectForKey:(nonnull NSString*)key;
+- (void)setObject:(nonnull id<NSCoding>)anObject forKey:(nonnull NSString*)key;
+- (void)setObject:(nonnull id<NSCoding>)anObject forKey:(nonnull NSString*)key withTimeoutInterval:(NSTimeInterval)timeoutInterval;
 
 @property(nonatomic) NSTimeInterval defaultTimeoutInterval; // Default is 1 day
 @end

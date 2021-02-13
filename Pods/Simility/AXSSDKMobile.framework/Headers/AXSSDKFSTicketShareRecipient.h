@@ -13,9 +13,9 @@
  */
 @interface AXSSDKFSTicketShareRecipient : NSObject
 
-@property (nonatomic, strong) NSString *firstName;
-@property (nonatomic, strong) NSString *lastName;
-@property (nonatomic, strong) NSString *email;
-@property (nonatomic, strong) NSString *message;
+@property (nullable, nonatomic, strong) NSString *firstName;
+@property (nullable, nonatomic, strong) NSString *lastName;
+@property (nullable, nonatomic, strong) NSString *email;
+@property (nullable, nonatomic, strong) NSString *message;
 
 @end

@@ -7,37 +7,43 @@
 //
 
 #import "AXSSDKModel.h"
+#import "AXSSDKTicketingRegion.h"
 
-#define kNotiFSUserLogout @"kNotiFSUserLogout"
+@class AXSSDKFSUser, AXSSDKFSSiteSkin;
 
 @interface AXSSDKFSUserPreference : AXSSDKModel <AXSJsonEncodableModel>
 
-@property (nonatomic, strong) NSString *email;
-@property (nonatomic, strong) NSString *firstName;
-@property (nonatomic, strong) NSString *lastName;
-@property (nonatomic, strong) NSString *memberId;
-@property (nonatomic, strong) NSString *mobileId;
-@property (nonatomic, strong) NSString *token;
-@property (nonatomic, strong) NSNumber *isPhoneVerified;
+@property (nullable, nonatomic, strong) NSString *email;
+@property (nullable, nonatomic, strong) NSString *firstName;
+@property (nullable, nonatomic, strong) NSString *lastName;
+@property (nullable, nonatomic, strong) NSString *memberId;
+@property (nullable, nonatomic, strong) NSString *mobileId;
+@property (nullable, nonatomic, strong) NSString *token;
+@property (nullable, nonatomic, strong) NSNumber *regionId;
+@property (nonatomic, assign, readonly) AXSSDKTicketingRegion region;
+@property (nullable, nonatomic, strong) NSNumber *isPhoneVerified;
+@property (nullable, nonatomic, strong) AXSSDKFSSiteSkin *siteSkin;
 
 /**
  *  Shared instance of the class
  *
  *  @return class object
  */
-+ (instancetype)sharedInstance;
++ (nonnull instancetype)sharedInstance;
 
 /**
  *  User's full name
  *
  *  @return user's full name
  */
-- (NSString *)fullName;
+- (nullable NSString *)fullName;
 
 /**
  *  Save user preference object on disk
  */
 - (void)save;
+
+- (void)updateWithFSUser:(nonnull AXSSDKFSUser *)user;
 
 /**
  *  Check if user is logged in

@@ -7,27 +7,21 @@
 //
 
 #import <AXSSDKMobile/AXSSDKMobile.h>
-
-typedef enum : NSUInteger {
-    AXSSDKCCTypeVisa,
-    AXSSDKCCTypeMastercard,
-    AXSSDKCCTypeAmex,
-    AXSSDKCCTypeDiscover
-} AXSSDKCCType;
+#import "AXSSDKCCType.h"
 
 @interface AXSSDKCreditCard : AXSSDKModel <AXSJsonEncodableModel>
 
-@property (nonatomic, strong) NSString *fullName;
+@property (nullable, nonatomic, strong) NSString *fullName;
 @property (nonatomic, assign) AXSSDKCCType cardType;
-@property (nonatomic, strong) NSNumber *cardNumber;
-@property (nonatomic, strong) NSNumber *expMonth;
-@property (nonatomic, strong) NSNumber *expYear;
-@property (nonatomic, strong) NSNumber *securityCode;
-@property (nonatomic, strong) NSString *address1;
-@property (nonatomic, strong) NSString *address2;
-@property (nonatomic, strong) NSString *city;
-@property (nonatomic, strong) NSString *zip;
-@property (nonatomic, strong) NSNumber *fsStateId;
-@property (nonatomic, strong) NSNumber *fsCountryId;
+@property (nullable, nonatomic, strong) NSNumber *cardNumber;
+@property (nullable, nonatomic, strong) NSNumber *expMonth;
+@property (nullable, nonatomic, strong) NSNumber *expYear;
+@property (nullable, nonatomic, strong) NSNumber *securityCode;
+@property (nullable, nonatomic, strong) NSString *address1;
+@property (nullable, nonatomic, strong) NSString *address2;
+@property (nullable, nonatomic, strong) NSString *city;
+@property (nullable, nonatomic, strong) NSString *zip;
+@property (nullable, nonatomic, strong) NSNumber *fsStateId;
+@property (nullable, nonatomic, strong) NSNumber *fsCountryId;
 
 @end

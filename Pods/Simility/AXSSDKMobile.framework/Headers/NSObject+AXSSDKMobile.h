@@ -11,5 +11,7 @@
 @interface NSObject (AXSSDKMobile)
 
 @property (nonatomic, retain) id axssdk_associatedObject;
+- (void)axssdk_setAssociatedObject:(id)object forKey:(NSString *)key;
+- (id)axssdk_associatedObjectForKey:(NSString *)key;
 
 @end

@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+
 @interface AXSSDKMobileAppLink : NSObject
 
 /**
@@ -21,6 +22,8 @@
 *
 *  @return BOOL indicates if url is handled or not
 */
-+ (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation;
++ (BOOL)application:(nonnull UIApplication *)application openURL:(nullable NSURL *)url sourceApplication:(nullable NSString *)sourceApplication annotation:(nullable id)annotation;
 
 @end
+
+

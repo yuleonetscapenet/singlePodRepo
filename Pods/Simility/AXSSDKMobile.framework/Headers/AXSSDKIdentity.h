@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "AXSSDKModel.h"
 #import "AXSSDKDevice.h"
+#import "AXSSDKLocation.h"
 
 /**
  *  The AXSIdentity object represents your user identity on the AXS platform. It keeps track of your access token as well as your user information.
@@ -18,9 +19,14 @@
 /**
  *  The "anonymous ID" for unauthenticated users.
  */
-@property (nonatomic, strong) NSString* axsAppId;
-@property (nonatomic, strong) NSString* clientId;
-@property (nonatomic, strong) NSNumber* userId;
-@property (nonatomic, strong) AXSSDKDevice *device;
+@property (nullable, nonatomic, strong) NSString* axsAppId;
+@property (nullable, nonatomic, strong) NSString* clientId;
+@property (nullable, nonatomic, strong) NSNumber* userId;
+@property (nullable, nonatomic, strong) AXSSDKDevice *device;
+
+/**
+ Device location. Not user's location that is stored on the server.
+ */
+@property (nullable, nonatomic, strong) AXSSDKLocation *location;
 
 @end

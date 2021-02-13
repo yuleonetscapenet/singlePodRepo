@@ -15,7 +15,12 @@
  *
  *  @return
  */
-- (NSDictionary*)axssdk_queryDictionary;
-- (NSDictionary *)axssdk_fragmentDictionary;
+- (nonnull NSDictionary*)axssdk_queryDictionary;
 
+/**
+ *  Returns URL fragment parameters in NSDictionary
+ *
+ *  @return
+ */
+- (nonnull NSDictionary *)axssdk_fragmentDictionary;
 @end

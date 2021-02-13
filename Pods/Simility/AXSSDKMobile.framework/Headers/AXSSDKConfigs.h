@@ -7,32 +7,61 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AXSSDKTicketingRegion.h"
 
 @interface AXSSDKConfigs : NSObject
 
 /**
- *  Seat upgrades URL
+ *  Help Center URL
  *
  *  @return URL
  */
-+ (NSString *)seatUpgradesURL;
++ (nonnull NSString *)helpCenterURL;
++ (nonnull NSString *)helpCenterURLForRegionId:(nonnull NSNumber *)regionId;
++ (nonnull NSString *)invalidEndUserDetectedSupportUrl;
++ (nonnull NSString *)helpCenterURLForRegion:(AXSSDKTicketingRegion)region;
++ (nonnull NSString *)aboutAXSURL;
++ (nonnull NSNumber *)flashSeatsSiteSkinId;
+
++ (nonnull NSString *)facebookAuthURL;
++ (nonnull NSString *)blizzardAuthURL;
++ (nonnull NSString *)blizzardAuthRedirectURL;
+
++ (nonnull NSString *)hostForAxsCom;
+
++ (nonnull NSString *)cancelledEventHelpURL;
++ (nonnull NSString *)postponedEventHelpURL;
++ (nonnull NSString *)suspendedEventHelpURL;
++ (nonnull NSString *)rescheduledEventHelpURL;
+
++ (nonnull NSString *)donationFormURL;
+
++ (nonnull NSURL *)signInWithAppleURL;
++ (nonnull NSString *)signInWithAppleRedirectURI;
++ (nonnull NSString *)signInWithAppleRedirectURI2;
 
 /**
- *  AXS ID URL. User sign in, create account and forget password. After the user is logged in, it will redirect to https://www.axs.com/axs-id-redirect with access_token & refresh_token in query parameters.
- *
- *  @return URL
+ * Returns system locale. E.g. en-US, en-UK
  */
-+ (NSString *)signInURL;
++ (nonnull NSString *)localeCode;
 
 /**
- *  AXS user account information and edit URL
- *
- *  @return URL
+ Returns device locale
+ 
+ @return US, UK, SE
  */
-+ (NSString *)accountInfoURL;
++ (nonnull NSString *)localeCountryCode;
++ (BOOL)isLocaleCountryEU;
++ (BOOL)isLocaleCountryFlashEnabled;
++ (nonnull NSNumber *)axsApiRegionId;
++ (nonnull NSString *)axsApiRegionIdString;
 
-+ (NSNumber *)flashSeatsSiteSkinId;
+/**
+ Check if a region ID is enabled for sale balance management
 
-+ (NSString *)facebookAuthURL;
+ @param regionId region ID
+ @return bool
+ */
++ (BOOL)isSaleBalanceEnabledRegion:(nonnull NSNumber *)regionId;
 
 @end

@@ -13,15 +13,15 @@
  */
 @interface AXSSDKDevice : AXSSDKModel
 
-@property (nonatomic, readonly) NSString *deviceId;
-@property (nonatomic, strong) NSString *deviceToken;
-@property (nonatomic, readonly) NSString *type;
-@property (nonatomic, readonly) NSString *name;
-@property (nonatomic, readonly) NSString *operatingSystem;
-@property (nonatomic, readonly) NSString *appVersion;
-@property (nonatomic, readonly) NSString *phoneNumber;
-@property (nonatomic, readonly) NSString *carrier;
+@property (nullable, nonatomic, readonly) NSString *deviceId;
+@property (nullable, nonatomic, strong) NSString *deviceToken;
+@property (nullable, nonatomic, readonly) NSString *type;
+@property (nullable, nonatomic, readonly) NSString *name;
+@property (nullable, nonatomic, readonly) NSString *operatingSystem;
+@property (nullable, nonatomic, readonly) NSString *appVersion;
+@property (nullable, nonatomic, readonly) NSString *phoneNumber;
+@property (nullable, nonatomic, readonly) NSString *carrier;
 
-+ (instancetype)currentDevice;
++ (instancetype _Nonnull)currentDevice;
 
 @end

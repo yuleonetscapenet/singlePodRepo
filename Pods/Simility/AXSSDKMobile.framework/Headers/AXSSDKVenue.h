@@ -16,25 +16,25 @@
  */
 @interface AXSSDKVenue : NSManagedObject
 
-@property (nonatomic, retain) NSString * address;
-@property (nonatomic, retain) NSString * city;
-@property (nonatomic, retain) NSString * country;
-@property (nonatomic, retain) NSNumber * latitude;
-@property (nonatomic, retain) NSNumber * longitude;
-@property (nonatomic, retain) NSString * state;
-@property (nonatomic, retain) NSString * timezoneName;
-@property (nonatomic, retain) NSString * title;
-@property (nonatomic, retain) NSString * venueId;
-@property (nonatomic, retain) NSString * venueImageUrl;
-@property (nonatomic, retain) NSString * postalCode;
-@property (nonatomic, retain) NSSet *events;
+@property (nullable, nonatomic, retain) NSString * address;
+@property (nullable, nonatomic, retain) NSString * city;
+@property (nullable, nonatomic, retain) NSString * country;
+@property (nullable, nonatomic, retain) NSNumber * latitude;
+@property (nullable, nonatomic, retain) NSNumber * longitude;
+@property (nullable, nonatomic, retain) NSString * state;
+@property (nullable, nonatomic, retain) NSString * timezoneName;
+@property (nullable, nonatomic, retain) NSString * title;
+@property (nullable, nonatomic, retain) NSString * venueId;
+@property (nullable, nonatomic, retain) NSString * venueImageUrl;
+@property (nullable, nonatomic, retain) NSString * postalCode;
+@property (nullable, nonatomic, retain) NSSet *events;
 @end
 
 @interface AXSSDKVenue (CoreDataGeneratedAccessors)
 
-- (void)addEventsObject:(AXSSDKEvent *)value;
-- (void)removeEventsObject:(AXSSDKEvent *)value;
-- (void)addEvents:(NSSet *)values;
-- (void)removeEvents:(NSSet *)values;
+- (void)addEventsObject:(nonnull AXSSDKEvent *)value;
+- (void)removeEventsObject:(nonnull AXSSDKEvent *)value;
+- (void)addEvents:(nonnull NSSet *)values;
+- (void)removeEvents:(nonnull NSSet *)values;
 
 @end

@@ -10,9 +10,6 @@
 
 @class AXSSDKCreditCard;
 
-/**
- *  A manager that handles FlashSeats user related API calls.
- */
 @interface AXSSDKFSUserManager : NSObject
 
 /**
@@ -20,7 +17,7 @@
  *
  *  @return class object
  */
-+ (AXSSDKFSUserManager *)sharedInstance;
++ (nonnull AXSSDKFSUserManager *)sharedInstance;
 
 /**
  *  Log in FlashSeats user with email and password
@@ -30,7 +27,7 @@
  *  @param forceCreateMobileId Force to create a new mobile ID or not
  *  @param completionHandler   A completion handler after API request is completed
  */
-- (void)loginWithEmail:(NSString*)email password:(NSString*)password forceCreateMobileId:(BOOL)forceCreateMobileId completionHandler:(void(^)(NSError *error))completionHandler;
+- (void)loginWithEmail:(nonnull NSString *)email password:(nonnull NSString *)password forceCreateMobileId:(BOOL)forceCreateMobileId completionHandler:(void(^ _Nullable)(NSError * _Nullable error))completionHandler DEPRECATED_ATTRIBUTE;
 
 /**
  *  Create a FlashSeats user account
@@ -42,7 +39,7 @@
  *  @param homePhone         User home phone number
  *  @param completionHandler A completion handler after API request is completed
  */
-- (void)createAccountWithEmail:(NSString*)email password:(NSString*)password firstName:(NSString *)firstName lastName:(NSString *)lastName homePhone:(NSString *)homePhone completionHandler:(void(^)(NSError *error))completionHandler;
+- (void)createAccountWithEmail:(nonnull NSString *)email password:(nonnull NSString *)password firstName:(nonnull NSString *)firstName lastName:(nonnull NSString *)lastName homePhone:(nonnull NSString *)homePhone completionHandler:(void(^ _Nullable)(NSError * _Nullable error))completionHandler DEPRECATED_ATTRIBUTE;
 
 /**
  *  Forget password for FlashSeats user
@@ -50,29 +47,36 @@
  *  @param email             User email
  *  @param completionHandler A completion handler after API request is completed
  */
-- (void)forgetPasswordWithEmail:(NSString*)email completionHandler:(void(^)(NSError *error))completionHandler;
+- (void)forgetPasswordWithEmail:(nonnull NSString*)email completionHandler:(void(^ _Nullable)(NSError * _Nullable error))completionHandler;
 
 /**
  *  Log out FlashSeats user account from server
  *
  *  @param completionHandler A completion handler after API request is completed
  */
-- (void)logoutAccountWithCompletionHandler:(void(^)(NSError *error))completionHandler;
+- (void)logoutAccountWithCompletionHandler:(void(^ _Nullable)(NSError * _Nullable error))completionHandler;
 
 /**
  *  Retrieve FlashSeats user's upcoming events from server
  *
  *  @param completionHandler A completion handler after API request is completed
  */
-- (void)myEventsWithCompletionHandler:(void(^)(NSError *error, NSArray *events))completionHandler;
+- (void)myEventsWithCompletionHandler:(void(^ _Nullable)(NSError * _Nullable error, NSArray * _Nullable events))completionHandler DEPRECATED_ATTRIBUTE;
 
+
+/**
+ Verify if user is auth with current device. If user login in another app/device, this call returns 401.
+
+ @param completionHandler A completion handler after API request is completed
+ */
+- (void)authCheckWithCompletionHandler:(void(^ _Nullable)(NSError * _Nullable error))completionHandler;
 
 /**
  *  User payment settlement methods
  *
  *  @param completionHandler A completion handler after API request is completed
  */
-- (void)paymentMethodsWithcompletionHandler:(void(^)(NSError *error, NSDictionary *paymentMethods))completionHandler;
+- (void)paymentMethodsWithcompletionHandler:(void(^ _Nullable)(NSError * _Nullable error, NSDictionary * _Nullable paymentMethods))completionHandler;
 
 /**
  *  Add a new credit card to user acount
@@ -80,22 +84,21 @@
  *  @param creditCard        AXSSDKCreditCard object
  *  @param completionHandler A completion handler after API request is completed
  */
-- (void)addCreditCard:(AXSSDKCreditCard *)creditCard withcompletionHandler:(void(^)(NSError *error, id resposne))completionHandler;
+- (void)addCreditCard:(nullable AXSSDKCreditCard *)creditCard withcompletionHandler:(void(^ _Nullable)(NSError * _Nullable error, id _Nullable response))completionHandler;
 
 /**
  *  Retrieve FlashSeats user's upcoming events from local database
  *
  *  @return List of grouped events / orders
  */
-- (NSArray *)myEvents;
+- (nullable NSArray *)myEvents DEPRECATED_ATTRIBUTE;
 
 /**
  *  Retrieve FlashSeats user's transferred events from local database
  *
  *  @return List of events grouped by event then email, order by date.
  */
-- (NSArray *)myTransfers;
-
+- (nullable NSArray *)myTransfers DEPRECATED_ATTRIBUTE;
 
 /**
  Save events return from myEventsWithCompletionHandler to database
@@ -103,5 +106,6 @@
  @param events Array of events return from method myEventsWithCompletionHandler
  @return BOOL
  */
-- (BOOL)saveMyEvents:(NSArray *)events;
+- (BOOL)saveMyEvents:(nonnull NSArray *)events DEPRECATED_ATTRIBUTE;
+
 @end

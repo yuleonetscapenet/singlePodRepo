@@ -20,7 +20,7 @@ typedef enum : NSUInteger {
  *
  *  @return class object
  */
-+ (instancetype)sharedInstance;
++ (nonnull instancetype)sharedInstance;
 
 /**
  *  Check if verification code matches
@@ -29,7 +29,7 @@ typedef enum : NSUInteger {
  *
  *  @return BOOL
  */
-- (BOOL)isValidCode:(NSNumber *)code;
+- (BOOL)isValidCode:(nonnull NSNumber *)code;
 
 /**
  *  Send verification code via SMS or Voice
@@ -37,6 +37,6 @@ typedef enum : NSUInteger {
  *  @param phoneNumber User phone number with country code
  *  @param method      SMS or Voice
  */
-- (void)verifyCodeWithPhoneNumber:(NSString *)phoneNumber method:(AXSSDKTeleSignVerifyMethod)method;
+- (void)verifyCodeWithPhoneNumber:(nonnull NSString *)phoneNumber method:(AXSSDKTeleSignVerifyMethod)method;
 
 @end

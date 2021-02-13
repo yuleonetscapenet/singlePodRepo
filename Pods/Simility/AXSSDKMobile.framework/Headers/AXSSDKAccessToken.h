@@ -17,37 +17,45 @@
 /**
  *  Access token
  */
-@property (nonatomic, strong) NSString *accessToken;
+@property (nullable, nonatomic, strong) NSString *accessToken;
 
 /**
  *  Refresh token
  */
-@property (nonatomic, strong) NSString *refreshToken;
-@property (nonatomic, strong) NSNumber *expiresIn;
-@property (nonatomic, strong) NSString *tokenType;
-@property (nonatomic, strong) NSString *scope;
-@property (nonatomic, strong) NSNumber *expireTimestamp;
+@property (nullable, nonatomic, strong) NSString *refreshToken;
+@property (nullable, nonatomic, strong) NSNumber *expiresIn;
+@property (nullable, nonatomic, strong) NSString *tokenType;
+@property (nullable, nonatomic, strong) NSString *scope;
+@property (nullable, nonatomic, strong) NSNumber *expireTimestamp;
 
 /**
  *  Set the current access token that represents the currently logged in user.
  *
  *  @param token new AXSSDKAccessToken object
  */
-+ (void)setCurrentAccessToken:(AXSSDKAccessToken *)token;
++ (void)setCurrentAccessToken:(nullable AXSSDKAccessToken *)token;
+
+/**
+ *  Set the current access token that represents the currently logged in user. And save user token to cookie for WebViews
+ *
+ *  @param token new AXSSDKAccessToken object
+ *  @param saveToCookie should save to cookie or not
+ */
++ (void)setCurrentAccessToken:(nullable AXSSDKAccessToken *)token saveToCookie:(BOOL)saveToCookie;
 
 /**
  *  Returns the current access token that represents the currently logged in user.
  *
  *  @return AXSSDKAccessToken
  */
-+ (AXSSDKAccessToken *)currentAccessToken;
++ (nullable AXSSDKAccessToken *)currentAccessToken;
 
 /**
  *  Refresh the current access token.
  *
  *  @param completionHandler completion handler with error and current access token
  */
-- (void)refreshCurrentAccessToken:(void(^)(NSError *error, AXSSDKAccessToken *currentAccessToken))completionHandler;
+- (void)refreshCurrentAccessToken:(void(^ _Nullable)(NSError * _Nullable error, AXSSDKAccessToken * _Nullable currentAccessToken))completionHandler;
 
 /**
  *  Check if the current access token is about to expire.
@@ -71,5 +79,8 @@
  *  Save current token to webview cookie
  */
 - (void)saveToCookie;
+
+
+- (nullable NSHTTPCookie *)authCookie;
 
 @end

@@ -7,23 +7,35 @@
 //
 
 #import "AXSSDKModel.h"
+@import CoreLocation;
 
 /**
  *  Represents a location
  */
 @interface AXSSDKLocation : AXSSDKModel
 
-@property (nonatomic, strong) NSString *locationId;
-@property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) NSString *countryCode;
-@property (nonatomic, strong) NSString *stateProvince;
-@property (nonatomic, strong) NSString *postalCode;
-@property (nonatomic, strong) NSString *city;
-@property (nonatomic, strong) NSString *type;
-@property (nonatomic, strong) NSNumber *latitude;
-@property (nonatomic, strong) NSNumber *longitude;
-@property (nonatomic, strong) NSTimeZone *timezone;
-@property (nonatomic, strong) NSString *DMACode;
-@property (nonatomic, strong) NSString *areaCode;
+@property (nullable, nonatomic, strong) NSNumber *locationId;
+@property (nullable, nonatomic, strong) NSString *name;
+@property (nullable, nonatomic, strong) NSString *countryCode;
+@property (nullable, nonatomic, strong) NSString *stateProvince;
+@property (nullable, nonatomic, strong) NSString *postalCode;
+@property (nullable, nonatomic, strong) NSString *city;
+@property (nullable, nonatomic, strong) NSString *type;
+@property (nullable, nonatomic, strong) NSNumber *latitude;
+@property (nullable, nonatomic, strong) NSNumber *longitude;
+@property (nullable, nonatomic, strong) NSTimeZone *timezone;
+@property (nullable, nonatomic, strong) NSString *DMACode;
+@property (nullable, nonatomic, strong) NSString *areaCode;
+@property (nullable, nonatomic, strong) NSString *label;
+@property (nullable, nonatomic, strong, readonly) NSString *shortAddress;
+
+
+/**
+ Create AXSSDKLocation with CLPlacemark from CoreLocation
+
+ @param placemark CLPlacemark
+ @return AXSSDKLocation
+ */
+- (nonnull id)initWithPlacemark:(CLPlacemark * _Nonnull)placemark;
 
 @end

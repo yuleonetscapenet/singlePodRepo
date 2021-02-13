@@ -17,17 +17,17 @@
  */
 @interface AXSSDKIdentityManager : NSObject
 
-@property (nonatomic, strong) AXSSDKIdentity* identity;
+@property (nonatomic, strong, nullable) AXSSDKIdentity* identity;
 
 /**
  *  Shared instance of the class
  *
  *  @return class object
  */
-+ (AXSSDKIdentityManager *)sharedInstance;
++ (nonnull AXSSDKIdentityManager *)sharedInstance;
 
 
-- (void)initialize:(void(^)(NSError *error, id response))completionHandler;
+- (void)initialize:(void(^ _Nullable)(NSError * _Nullable error, id _Nullable response))completionHandler;
 
 /**
  *  Link an existing identity with an AXS user ID.
@@ -35,7 +35,7 @@
  *  @param userId The user ID of the My AXS user account.
  *  @param completionHandler The completion block that fires when the update succeeds/fails.
  */
-- (void)linkIdentity:(NSNumber*)userId completionHandler:(void(^)(NSError *error, id response))completionHandler;
+- (void)linkIdentity:(nonnull NSNumber *)userId completionHandler:(void(^ _Nullable)(NSError * _Nullable error, id _Nullable response))completionHandler;
 
 
 /**
@@ -49,7 +49,7 @@
  *  @param identityData      dictionary of identity information
  *  @param completionHandler The completion block that fires when the update succeeds/fails.
  */
-- (void)linkExternalIdentity:(NSDictionary*)identityData completionHandler:(void(^)(NSError *error))completionHandler;
+- (void)linkExternalIdentity:(nonnull NSDictionary*)identityData completionHandler:(void(^ _Nullable)(NSError * _Nullable error))completionHandler;
 
 /**
  *  Update the location on file for this identity.
@@ -57,7 +57,7 @@
  *  @param location   The new location record.
  *  @param completionHandler The completion block that fires when the update succeeds/fails.
  */
-- (void)updateLocationForIdentity:(AXSSDKLocation *)location completionHandler:(void(^)(NSError *error))completionHandler;
+- (void)updateLocationForIdentity:(nullable AXSSDKLocation *)location completionHandler:(void(^ _Nullable)(NSError * _Nullable error))completionHandler;
 
 /**
  *  Update identity region status
@@ -68,14 +68,14 @@
  *  @param coordinates       array of coordinates including lat, long and timestamp
  *  @param completionHandler The completion block that fires when the update succeeds/fails.
  */
-- (void)updateIdentityRegionStatus:(NSString *)regionId typeId:(int)typeId action:(int)action coordinates:(NSArray *)coordinates completionHandler:(void(^)(NSError *error))completionHandler;
+- (void)updateIdentityRegionStatus:(nonnull NSString *)regionId typeId:(int)typeId action:(int)action coordinates:(nonnull NSArray *)coordinates completionHandler:(void(^ _Nullable)(NSError * _Nullable error))completionHandler;
 
 /**
  *  Register device token with current identity
  *
  *  @param token   device token
  */
-- (void)registerForPushNotificationsWithDeviceToken:(NSData*)token;
+- (void)registerForPushNotificationsWithDeviceToken:(nullable NSData *)token;
 
 /**
  *  Register device token with current identity
@@ -83,7 +83,7 @@
  *  @param token   device token
  *  @param completionHandler The completion block that fires when the registeration succeeds/fails.
  */
-- (void)registerForPushNotificationsWithDeviceToken:(NSData*)token completionHandler:(void(^)(NSError *error))completionHandler;
+- (void)registerForPushNotificationsWithDeviceToken:(nullable NSData *)token completionHandler:(void(^ _Nullable)(NSError * _Nullable error))completionHandler;
 
 /**
  *  Call this method in AppDelegate didReceiveRemoteNotification so AXS SDK can handle notification send by AXS.
@@ -93,5 +93,6 @@
  *
  *  @return BOOL indicates if remote notification is handled or not.
  */
-- (BOOL)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo;
+- (BOOL)application:(nonnull UIApplication *)application didReceiveRemoteNotification:(nullable NSDictionary *)userInfo;
+
 @end
