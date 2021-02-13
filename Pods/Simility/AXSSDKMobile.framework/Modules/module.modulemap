@@ -1,6 +1,0 @@
-framework module AXSSDKMobile {
-  umbrella header "AXSSDKMobile.h"
-
-  export *
-  module * { export * }
-}
