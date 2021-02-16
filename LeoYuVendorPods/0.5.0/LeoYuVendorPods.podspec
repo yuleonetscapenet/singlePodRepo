@@ -13,10 +13,6 @@ Pod::Spec.new do |s|
                         :tag => "#{s.version}"
 }
   s.platform         = :ios, '12.0'
-  
-  s.subspec 'Simility' do |simility|
-    simility.vendored_frameworks = "Pods/Simility/AXSSDKMobile.framework"
-  end
 
 s.subspec 'Veritix' do |veritix|
     veritix.source_files = "Pods/Veritix/*.h"
