@@ -5,6 +5,7 @@
 //  Created by Anupam on 20/01/17.
 //  Copyright © 2017 Simility. All rights reserved.
 //
+// pod spec 0.5.0
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
