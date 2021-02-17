@@ -13,8 +13,8 @@ Pod::Spec.new do |s|
                         :tag => "#{s.version}"
 }
   s.platform         = :ios, '12.0'
-  
- s.subspec 'Veritix' do |veritix|
+
+s.subspec 'Veritix' do |veritix|
     veritix.source_files = "Pods/Veritix/*.h"
     veritix.vendored_library = "Pods/Veritix/libSimilityRecon.a"
   end
