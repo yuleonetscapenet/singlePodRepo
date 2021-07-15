@@ -21,3 +21,5 @@ s.subspec 'Veritix' do |veritix|
 s.subspec 'iOS-SecureEntrySDK' do |secureEntrySDK|
    secureEntrySDK.source_files = "Pods/iOS-SecureEntrySDK/*"
 end
+
+end
