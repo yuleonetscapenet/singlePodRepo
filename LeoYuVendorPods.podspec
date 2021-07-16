@@ -21,8 +21,8 @@ s.subspec 'Veritix' do |veritix|
 s.subspec 'iOS-SecureEntrySDK' do |secureEntrySDK|
    secureEntrySDK.source_files = 'Pods/iOS-SecureEntrySDK/**/*.{swift,h}'
  
-secureEntrySDK.resource_bundles = { 'iOS-SecureEntrySDK' => ['Pods/iOS-SecureEntrySDK/**/*.{xcassets,imageset}'] }
-    
+secureEntrySDK.resources =  ['Pods/iOS-SecureEntrySDK/**/*.{xcassets,imageset}'] 
+     
 end
 
 end
